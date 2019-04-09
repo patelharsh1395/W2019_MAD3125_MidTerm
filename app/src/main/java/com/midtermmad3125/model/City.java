@@ -1,16 +1,6 @@
 package com.midtermmad3125.model;
 
 
-//"city": {
-//        "id": 524901,
-//        "name": "Moscow",
-//        "coord": {
-//        "lon": 37.6177,
-//        "lat": 55.7507
-//        },
-//        "country": "RU",
-//        "population": 1000000
-//        },
 
 
 import java.io.Serializable;
