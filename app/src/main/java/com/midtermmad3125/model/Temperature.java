@@ -8,8 +8,9 @@ package com.midtermmad3125.model;
 //        "morn": 10.35
 
 
+import java.io.Serializable;
 
-public class Temperature {
+public class Temperature implements Serializable {
 
     float min;
     float max;

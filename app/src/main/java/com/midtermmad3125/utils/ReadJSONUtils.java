@@ -1,25 +1,19 @@
 package com.midtermmad3125.utils;
 
-import android.content.Context;
 
-import com.midtermmad3125.model.RootElementJson;
+
+import android.content.Context;
+import android.text.format.DateFormat;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class ReadJSONUtils
 {
-    public static RootElementJson format(String json)
-    {
-
-
-        return  null;
-    }
-
-
-
-
     public static String loadJSONFromAsset(Context context, String jsonFileName) {
         String jsonString;
         try {
@@ -34,5 +28,15 @@ public class ReadJSONUtils
             return null;
         }
         return jsonString;
+    }
+
+    public static String getDateFromTimeStamp(long time)
+    {
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        cal.setTimeInMillis(time * 1000L);
+        String date = DateFormat.format("EEEE", cal).toString();
+        date += "\n" + DateFormat.format("dd MMM yyyy", cal).toString();
+        date += "\n" + DateFormat.format("hh:mm a", cal).toString();
+        return date;
     }
 }
