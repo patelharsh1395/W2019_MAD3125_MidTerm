@@ -38,13 +38,32 @@ public class WeatherDetails implements Serializable
     int dt;
     Temperature temp;
     float pressure;
+    float humidity;
     ArrayList<Weather> weather;
     float speed;
     float deg;
     float rain;
 
+    public float getClouds() {
+        return clouds;
+    }
+
+    public void setClouds(float clouds) {
+        this.clouds = clouds;
+    }
+
+    float clouds;
 
 
+
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(float humidity) {
+        this.humidity = humidity;
+    }
 
     public ArrayList<Weather> getWeather() {
         return weather;

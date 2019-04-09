@@ -3,6 +3,7 @@ package com.midtermmad3125.model;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +54,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
 
+
+        Log.e("inside ONBIND","");
         viewHolder.bind(this.weatherDetails.get(i), this.listener);
 
 
@@ -68,15 +71,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
 
         TextView date_time ;
-        TextView min;
-        TextView max;
+        TextView minm;
+        TextView maxm;
         TextView condition_main;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             date_time = itemView.findViewById(R.id.text_date_time);
-            min = itemView.findViewById(R.id.text_min);
-            max = itemView.findViewById(R.id.text_max);
+            minm = itemView.findViewById(R.id.text_min);
+            maxm = itemView.findViewById(R.id.text_max);
             condition_main = itemView.findViewById(R.id.text_main);
 
 
@@ -86,19 +89,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         public void bind(final WeatherDetails weatherDetails, final SetCustomOnclickListener listener)
         {
-            date_time.setText(weatherDetails.getDt());
-            min.setText(weatherDetails.getTemp().min+"");
-            max.setText(weatherDetails.getTemp().max+"");
+            date_time.setText(weatherDetails.getDt()+"");
+            minm.setText(weatherDetails.getTemp().getMinm()+"");
+            maxm.setText(weatherDetails.getTemp().getMaxm()+"");
             condition_main.setText(weatherDetails.getWeather().get(0).description);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.customOnclick(weatherDetails);
-                }
-            });
 
-
+            
         }
     }
 }

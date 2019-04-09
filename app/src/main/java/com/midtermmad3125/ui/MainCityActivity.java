@@ -88,6 +88,7 @@ public class MainCityActivity extends AppCompatActivity
         Intent mIntent = new Intent(MainCityActivity.this , WeatherListActivity.class);
         mIntent.putExtra("WeatherList" , this.weatherDetails);
         startActivity(mIntent);
+        Log.e("testing ----",this.weatherDetails.get(0).getTemp().getMinm()+"");
     }
 
 
