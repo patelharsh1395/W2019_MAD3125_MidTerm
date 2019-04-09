@@ -53,6 +53,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
 
+        viewHolder.bind(this.weatherDetails.get(i), this.listener);
+
 
 
     }

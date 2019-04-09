@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.midtermmad3125.R;
 import com.midtermmad3125.model.CustomAdapter;
@@ -25,9 +26,9 @@ public class WeatherListActivity extends AppCompatActivity
 
         Bundle mbundel = getIntent().getExtras();
        this.weatherDetails = (ArrayList<WeatherDetails>) mbundel.getSerializable("WeatherList");
-
-
+        Log.e("))))))", this.weatherDetails.get(0).getDeg()+"");
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         CustomAdapter ca = new CustomAdapter(weatherDetails, this, new CustomAdapter.SetCustomOnclickListener() {
@@ -38,7 +39,7 @@ public class WeatherListActivity extends AppCompatActivity
                 startActivity(mIntent);
             }
         });
-
+        recyclerView.setAdapter(ca);
 
 
     }
