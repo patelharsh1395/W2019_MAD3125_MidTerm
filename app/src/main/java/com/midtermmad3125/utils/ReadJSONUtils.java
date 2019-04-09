@@ -1,7 +1,8 @@
 package com.midtermmad3125.utils;
 
 import android.content.Context;
-import android.util.Log;
+
+import com.midtermmad3125.model.RootElementJson;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,6 +10,16 @@ import java.nio.charset.StandardCharsets;
 
 public class ReadJSONUtils
 {
+    public static RootElementJson format(String json)
+    {
+
+
+        return  null;
+    }
+
+
+
+
     public static String loadJSONFromAsset(Context context, String jsonFileName) {
         String jsonString;
         try {
