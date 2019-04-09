@@ -1,6 +1,7 @@
 package com.midtermmad3125.model;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.midtermmad3125.R;
+import com.midtermmad3125.ui.WeatherDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -89,13 +91,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         public void bind(final WeatherDetails weatherDetails, final SetCustomOnclickListener listener)
         {
-            date_time.setText(weatherDetails.getDt()+"");
-            minm.setText(weatherDetails.getTemp().getMinm()+"");
-            maxm.setText(weatherDetails.getTemp().getMaxm()+"");
+            date_time.setText("DateTime : " +weatherDetails.getDt());
+            minm.setText("Min : "+weatherDetails.getTemp().getMinm()+"");
+            maxm.setText("Max : "+weatherDetails.getTemp().getMaxm()+"");
             condition_main.setText(weatherDetails.getWeather().get(0).description);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent mIntent = new Intent(itemView.getContext(), WeatherDetailsActivity.class);
+                    mIntent.putExtra("weatherdetails", weatherDetails);
+                    itemView.getContext().startActivity(mIntent);
+                }
+            });
 
-            
         }
     }
 }
