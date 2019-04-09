@@ -1,33 +1,6 @@
 package com.midtermmad3125.model;
 
-//"list": [
-//        {
-//        "dt": 1554714000,
-//        "temp": {
-//        "day": 10.35,
-//        "min": 10.35,
-//        "max": 10.35,
-//        "night": 10.35,
-//        "eve": 10.35,
-//        "morn": 10.35
-//        },
-//        "pressure": 1013.11,
-//        "humidity": 90,
-//        "weather": [
-//        {
-//        "id": 500,
-//        "main": "Rain",
-//        "description": "light rain",
-//        "icon": "10d"
-//        }
-//        ],
-//        "speed": 5.44,
-//        "deg": 184,
-//        "clouds": 92,
-//        "rain": 2.44
-//        },
-//
-//
+
 
 
 import java.io.Serializable;
