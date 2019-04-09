@@ -61,7 +61,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return 0;
+        return this.weatherDetails.size();
     }
 
     class ViewHolder extends  RecyclerView.ViewHolder{
@@ -86,10 +86,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         public void bind(final WeatherDetails weatherDetails, final SetCustomOnclickListener listener)
         {
-            this.date_time.setText(weatherDetails.getDt());
-            this.min.setText(weatherDetails.getTemp().min+"");
-            this.max.setText(weatherDetails.getTemp().max+"");
-            this.condition_main.setText(weatherDetails.getWeather().get(0).description);
+            date_time.setText(weatherDetails.getDt());
+            min.setText(weatherDetails.getTemp().min+"");
+            max.setText(weatherDetails.getTemp().max+"");
+            condition_main.setText(weatherDetails.getWeather().get(0).description);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

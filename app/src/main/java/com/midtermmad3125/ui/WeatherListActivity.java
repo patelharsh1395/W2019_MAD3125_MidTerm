@@ -34,7 +34,7 @@ public class WeatherListActivity extends AppCompatActivity
         CustomAdapter ca = new CustomAdapter(weatherDetails, this, new CustomAdapter.SetCustomOnclickListener() {
             @Override
             public void customOnclick(WeatherDetails weatherDetail) {
-                Intent mIntent = new Intent(WeatherListActivity.this , WeatherDetails.class);
+                Intent mIntent = new Intent(WeatherListActivity.this , WeatherDetailsActivity.class);
                 mIntent.putExtra("weatherdetails" , weatherDetail);
                 startActivity(mIntent);
             }
